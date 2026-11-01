@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeRunner 2D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+	<header class="hud" aria-label="Panel del juego">
+	  <div class="hud__item">
+		<span class="hud__label">Score</span>
+		<strong id="scoreValue" class="hud__value">0</strong>
+	  </div>
+	  <div class="hud__item">
+		<span class="hud__label">Vidas</span>
+		<strong id="livesValue" class="hud__value">3</strong>
+	  </div>
+	</header>
+
+	<section class="canvas-wrap" aria-label="Escena principal del juego">
+	  <canvas id="gameCanvas" width="960" height="540" role="img" aria-label="Canvas del juego 2D"></canvas>
+	</section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

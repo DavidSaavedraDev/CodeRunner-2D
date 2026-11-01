@@ -1,0 +1,101 @@
+:root {
+  --bg-primary: #0b0f18;
+  --bg-secondary: #111a2a;
+  --text-main: #e5ecff;
+  --text-muted: #8ea2d1;
+  --accent: #4df5c9;
+  --accent-soft: rgba(77, 245, 201, 0.2);
+  --danger: #ff5e88;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: var(--text-main);
+  background:
+	radial-gradient(circle at 10% 15%, #18233c, transparent 40%),
+	radial-gradient(circle at 85% 70%, #142940, transparent 35%),
+	var(--bg-primary);
+}
+
+.game-shell {
+  width: min(100%, 1024px);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--accent-soft);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(17, 26, 42, 0.95), rgba(11, 15, 24, 0.9));
+  box-shadow:
+	0 0 20px rgba(77, 245, 201, 0.08),
+	0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.hud__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+}
+
+.hud__label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.hud__value {
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(77, 245, 201, 0.35);
+}
+
+.canvas-wrap {
+  border: 1px solid rgba(142, 162, 209, 0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  box-shadow:
+	0 0 26px rgba(77, 245, 201, 0.07),
+	inset 0 0 30px rgba(77, 245, 201, 0.04);
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background:
+	linear-gradient(180deg, rgba(17, 26, 42, 0.65), rgba(8, 12, 20, 0.9));
+}
+
+@media (max-width: 700px) {
+  .hud {
+	flex-direction: column;
+	align-items: flex-start;
+  }
+
+  .hud__value {
+	font-size: 1.1rem;
+  }
+}
